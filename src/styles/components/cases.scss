@@ -1,0 +1,141 @@
+.cases {
+    height: 100vh;
+    width: 100%;
+    height: calc(var(--vh, 1vh) * 50);
+    .cases-navigation {
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 6;
+      padding: 18px;
+      box-sizing: border-box;
+      @include media("<=tablet") {
+        display: none;
+      }
+      .cases-arrow {
+        background: rgba(0, 0, 0, 0.4);
+        height: 72px;
+        width: 72px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg {
+          color: $white;
+          height: 28px;
+          width: 28px;
+        }
+        &.disabled {
+          opacity: 0.3;
+        }
+      }
+    }
+    .row {
+      @include media("<=tablet") {
+        flex-direction: column;
+      }
+      .case {
+        position: relative;
+        background: $black;
+        
+        
+        
+        .case-details {
+          width: 100vw;
+          height: 100vh;
+          height: calc(var(--vh, 1vh) * 50);
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          padding: 18px;
+          box-sizing: border-box;
+          z-index: 1;
+          position: relative;
+          @include media("<=tablet") {
+            width: 100vw;
+          }
+          @include media("<=phone") {
+            padding: 16px;
+          }
+          .case-infos {
+          span {
+            
+            font-size: 1.2rem;
+            width: 200px;
+            height: 400px;
+            
+            color: $white;
+            font-weight: 900;
+            @include media("<=desktop", ">tablet") {
+              font-size: 1.4rem;
+            }
+            @include media("<=phone") {
+              font-size: 1.2rem;
+              line-height: 2.2rem;
+            }
+          }
+          h4 {
+            font-size: 26px;
+            letter-spacing: 0.88px;
+            line-height: 40px;
+            font-weight: 700;
+            // margin-bottom: 16px;
+            color: $white;
+            mix-blend-mode: difference;
+            
+            @include media("<=desktop", ">tablet") {
+              font-size: 2rem;
+              line-height: 2.4rem;
+            }
+            @include media("<=phone") {
+              font-size: 1.7rem;
+              line-height: 2.2rem;
+              margin-top: 8px;
+            }
+          }
+          .icon-link {
+            display: flex;
+            flex-direction: row;
+            margin-left: 10px;
+            
+        a {
+          z-index: 1000;
+          
+        }
+        .icon{
+            margin-right: 10px;
+            z-index: 1000;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            color: $white;
+            margin-top: 20px;
+            &:hover {
+              color: #333;
+            }
+        }
+    }
+        }
+        }
+        .case-image {
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          position: absolute;
+          opacity: 0.3;
+          
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
